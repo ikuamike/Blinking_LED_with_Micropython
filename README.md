@@ -1,4 +1,4 @@
-# Blinking LED with Micropython
+# Blinking LED with Micropython :boom: :bulb:
 
 Documenting how I was able to set up and run Micropython on NodeMCU which is a esp8266 board and blink LED.
 
