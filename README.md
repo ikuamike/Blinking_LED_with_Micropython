@@ -15,6 +15,8 @@ Documenting how I was able to set up and run Micropython on NodeMCU which is a e
 
 micropython firmare for esp8266 - [download latest version here](http://micropython.org/download#esp8266) 
 
+main.py in this repo. clone this repo to get it copy the code.
+
 #### How to install
 
 first erase flash using esptool with this command
@@ -25,23 +27,18 @@ deploy the firmware
 ```bash
 esptool.py --port /dev/ttyUSB0 --baud 115200 write_flash --flash_size=detect 0 esp8266-20171101-v1.9.3.bin
 ```
-## Connecting to the board
+## Connecting to the board and running code
 ```bash
 rshell -p /dev/ttyUSB0
 
-> repl
+> cp main.py /pyboard
 ```
-## Running Code
+On the nodemcu the onboard LED is on pin 2.
 
-You should now have the familiar python interface you're used to.
+Now restart the board by pressing RST on the board or disconnect usb and reconnect.
 
-Now lets blink LED, on the nodemcu the onboard LED is on pin 2.
-```python
->>> import machine
->>> pin = machine.Pin(2, machine.Pin.OUT)
->>> pin.on()
->>> pin.off()
-```
+LED should be blinking.
+
 Note that ```on``` method of a Pin might turn the LED off and ```off``` might turn it on (or vice versa)
 
 ## Credits
